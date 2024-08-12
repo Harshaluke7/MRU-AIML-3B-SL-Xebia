@@ -1,0 +1,159 @@
+# 1. Fibonacci Sequence
+n = 6
+fib_list = [0, 1]
+if n <= 2:
+  print(fib_list[:n])
+else:
+  for i in range(2, n):
+    fib_list.append(fib_list[i-1] + fib_list[i-2])
+  print(fib_list)
+
+
+# 2. Factorial Calculation
+n = 5
+factorial = 1
+for i in range(1, n+1):
+  factorial *= i
+print(factorial)
+
+
+# 3. Sum of Digits
+num = 1234
+sum = 0
+while num > 0:
+  digit = num % 10
+  sum += digit
+  num //= 10
+print(sum)
+
+
+# 4. Prime Number Check
+num = 29
+if num <= 1:
+  print(False)
+elif num <= 3:
+  print(True)
+elif num % 2 == 0 or num % 3 == 0:
+  print(False)
+else:
+  i = 5
+  while i * i <= num:
+    if num % i == 0 or num % (i + 2) == 0:
+      print(False)
+      break
+    i += 6
+  else:
+    print(True)
+
+
+
+# 5. Reverse a String
+string = "hello"
+reversed_string = ""
+for char in string:
+  reversed_string = char + reversed_string
+print(reversed_string)
+
+
+
+# 6. Palindrome Check
+string = "madam"
+reversed_string = string[::-1]
+if string == reversed_string:
+  print("Palindrome")
+else:
+  print("Not a palindrome")
+
+
+
+# 7. Print Multiplication Table
+n = 5
+for i in range(1, 11):
+  print(f"{n} x {i} = {n * i}")
+
+
+
+# 8. Find the Largest Number in a List
+numbers = [4, 7, 1, 8, 3]
+largest = numbers[0]
+for i in numbers:
+  if i > largest:
+    largest = i
+print(largest)
+
+
+
+# 9. Print a Pattern
+rows = 5
+for i in range(1, rows + 1):
+  print("*" * i)
+
+
+
+# 10. Even and Odd Numbers
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = []
+odd_numbers = []
+for num in numbers:
+  if num % 2 == 0:
+    even_numbers.append(num)
+  else:
+    odd_numbers.append(num)
+print(even_numbers, odd_numbers)
+
+
+
+# 11. Count Vowels and Consonants
+def count_vowels_consonants(string):
+  vowels = "aeiouAEIOU"
+  vowel_count = 0
+  consonant_count = 0
+  for char in string:
+    if char in vowels:
+      vowel_count += 1
+    elif char.isalpha():
+      consonant_count += 1
+  return {'vowels': vowel_count, 'consonants': consonant_count}
+
+string = "hello world"
+result = count_vowels_consonants(string)
+print(result)  # Output: {'vowels': 3, 'consonants': 7}
+
+
+
+# 12. Number Pattern
+def number_pattern(n):
+  for i in range(1, n+1):
+    print(str(i) * i)
+
+n = 4
+number_pattern(n)
+
+
+# 13. Multiples of a Number
+def print_multiples(num, limit):
+  for i in range(1, limit+1):
+    multiple = num * i
+    if multiple <= limit:
+      print(multiple, end=" ")
+
+num = 3
+limit = 20
+print_multiples(num, limit)
+
+
+
+# 14. Sum of Even and Odd Numbers in a List
+def sum_even_odd(numbers):
+  even_sum = 0
+  odd_sum = 0
+  for num in numbers:
+    if num % 2 == 0:
+      even_sum += num
+    else:
+      odd_sum += num
+  return even_sum, odd_sum
+
+numbers = [1, 2, 3, 4, 5, 6]
+result = sum_even_odd(numbers)
+print(result)  # Output: (12, 9)
